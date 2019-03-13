@@ -1,0 +1,34 @@
+[
+    {
+        "clanska_karta": 1,
+        "ime": "Dusan",
+        "prezime": "Dusanovic",
+        "obrisan": false,
+        "korisnickoIme": "dudu",
+        "lozinka": "123"
+    },
+    {
+        "clanska_karta": 3,
+        "ime": "Luka",
+        "prezime": "Lukanovic",
+        "obrisan": false,
+        "korisnickoIme": "lulu",
+        "lozinka": "123"
+    },
+    {
+        "clanska_karta": 0,
+        "ime": "Mitro",
+        "prezime": "Mitrovic",
+        "obrisan": false,
+        "korisnickoIme": "mimi",
+        "lozinka": "123"
+    },
+    {
+        "clanska_karta": 2,
+        "ime": "Simon",
+        "prezime": "Simanovic",
+        "obrisan": false,
+        "korisnickoIme": "sisi",
+        "lozinka": "123"
+    }
+]

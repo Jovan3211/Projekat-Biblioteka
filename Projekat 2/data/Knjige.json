@@ -1,0 +1,58 @@
+[
+    {
+        "id": 5,
+        "autor": "Boris",
+        "ime": "Avanture borisa",
+        "godinaIzdanja": 2019,
+        "brojPrimeraka": 30,
+        "brojSlobodnihPrimeraka": 28
+    },
+    {
+        "id": 3,
+        "autor": "Cetvrtko",
+        "ime": "Cetvrta",
+        "godinaIzdanja": 413,
+        "brojPrimeraka": 23,
+        "brojSlobodnihPrimeraka": 23
+    },
+    {
+        "id": 0,
+        "autor": "Dusan dusopisac",
+        "ime": "Dusanova knjiga",
+        "godinaIzdanja": 2003,
+        "brojPrimeraka": 30,
+        "brojSlobodnihPrimeraka": 30
+    },
+    {
+        "id": 2,
+        "autor": "Milos milosevic",
+        "ime": "Knjiga Milosa",
+        "godinaIzdanja": 2000,
+        "brojPrimeraka": 40,
+        "brojSlobodnihPrimeraka": 40
+    },
+    {
+        "id": 1,
+        "autor": "Marko markopisac",
+        "ime": "Markova knjiga",
+        "godinaIzdanja": 2005,
+        "brojPrimeraka": 20,
+        "brojSlobodnihPrimeraka": 20
+    },
+    {
+        "id": 4,
+        "autor": "Autor sa duzim imenom",
+        "ime": "Prilicno duga knjiga",
+        "godinaIzdanja": 2014,
+        "brojPrimeraka": 25,
+        "brojSlobodnihPrimeraka": 24
+    },
+    {
+        "id": 6,
+        "autor": "Mala",
+        "ime": "Sitna",
+        "godinaIzdanja": 1987,
+        "brojPrimeraka": 7,
+        "brojSlobodnihPrimeraka": 4
+    }
+]

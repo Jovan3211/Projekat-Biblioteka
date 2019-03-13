@@ -1,0 +1,30 @@
+[
+    {
+        "id": 0,
+        "ime": "Prvi",
+        "prezime": "Bibliotekar",
+        "korisnickoIme": "admin",
+        "lozinka": "admin"
+    },
+    {
+        "id": 1,
+        "ime": "Biblio",
+        "prezime": "Tekarovic",
+        "korisnickoIme": "bite",
+        "lozinka": "123"
+    },
+    {
+        "id": 3,
+        "ime": "Marko",
+        "prezime": "Markovic",
+        "korisnickoIme": "mama",
+        "lozinka": "123"
+    },
+    {
+        "id": 2,
+        "ime": "Petar",
+        "prezime": "Petrovic",
+        "korisnickoIme": "pepe",
+        "lozinka": "123"
+    }
+]
