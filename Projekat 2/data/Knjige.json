@@ -1,9 +1,9 @@
 [
     {
         "id": 5,
-        "autor": "Boris",
+        "autor": "Boris Borko",
         "ime": "Avanture borisa",
-        "godinaIzdanja": 2019,
+        "godinaIzdanja": 2020,
         "brojPrimeraka": 30,
         "brojSlobodnihPrimeraka": 28
     },

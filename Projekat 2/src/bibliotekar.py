@@ -29,8 +29,8 @@ def meni_knjige():
 def kreiranje_naloga():
     try:
         tip = get_tip_naloga()
-        ime = get_unos("           Ime: ")
-        prezime = get_unos("       Prezime: ")
+        ime = get_unos_single("           Ime: ")
+        prezime = get_unos_single("       Prezime: ")
         korisnickoIme = get_unos("Korisnicko ime: ")
         sifra = get_unos("       Lozinka: ")
     except KeyboardInterrupt:
@@ -90,10 +90,10 @@ def uredjenje_bibliotekar():
         unos = get_selection(5)
 
         if unos == 1:
-            novoIme = get_unos("Novo ime: ")
+            novoIme = get_unos_single("Novo ime: ")
             bibliotekar.update({"ime":novoIme})
         elif unos == 2:
-            novoPrezime = get_unos("Novo prezime: ")
+            novoPrezime = get_unos_single("Novo prezime: ")
             bibliotekar.update({"prezime":novoPrezime})
         elif unos == 3:
             novoKorisnickoIme = get_unos("Novo korisnicko ime: ")
@@ -143,10 +143,10 @@ def uredjenje_korisnik():
         unos = get_selection(4)
 
         if unos == 1:
-            novoIme = get_unos("Novo ime: ")
+            novoIme = get_unos_single("Novo ime: ")
             korisnik.update({"ime":novoIme})
         elif unos == 2:
-            novoPrezime = get_unos("Novo prezime: ")
+            novoPrezime = get_unos_single("Novo prezime: ")
             korisnik.update({"prezime":novoPrezime})
         elif unos == 3:
             novoKorisnickoIme = get_unos("Novo korisnicko ime: ")
@@ -214,10 +214,10 @@ def meni_trenutno_prijavljeni():
         unos = get_selection(5)
 
         if unos == 1:
-            novoIme = get_unos("Novo ime: ")
+            novoIme = get_unos_single("Novo ime: ")
             bibliotekar.update({"ime":novoIme})
         elif unos == 2:
-            novoPrezime = get_unos("Novo prezime: ")
+            novoPrezime = get_unos_single("Novo prezime: ")
             bibliotekar.update({"prezime":novoPrezime})
         elif unos == 3:
             novoKorisnickoIme = get_unos("Novo korisnicko ime: ")
@@ -244,18 +244,15 @@ def meni_rashodovanje():
         return
 
     brPrimeraka, brSlobodnihPrimeraka = knjiga["brojPrimeraka"], knjiga["brojSlobodnihPrimeraka"]
-    trenutnoZaduzeni = dataHandler.get_num_zaduzenja_knjige(knjiga)
     print(f"Trenutni broj primeraka: {brPrimeraka}. Trenutni broj slobodnih primeraka: {brSlobodnihPrimeraka}.")
 
     while 1:
         unos = get_unos_num_positive("Broj knjiga koje zelite da rashodujete: ")
         noviBrojPrimeraka = brPrimeraka - unos
         print(f"Novi broj primeraka: {noviBrojPrimeraka}")
-        if noviBrojPrimeraka < trenutnoZaduzeni:
-            print(f"\nGreska: Ne ostati manji broj knjiga od trenutno zaduzenih ({trenutnoZaduzeni}).")
+        if noviBrojPrimeraka < brSlobodnihPrimeraka:
+            print(f"\nGreska: Ne moze se smanjiti veci broj od trenutno slobodnih ({brSlobodnihPrimeraka}).")
         else:
-            if noviBrojPrimeraka < brSlobodnihPrimeraka:
-                knjiga.update({"brojSlobodnihPrimeraka":noviBrojPrimeraka})
             knjiga.update({"brojPrimeraka":noviBrojPrimeraka})
             dataHandler.update_knjiga(knjiga)
             break

@@ -1,5 +1,5 @@
-from funkcije import get_selection, get_unos, get_unos_num_positive, get_unos_single
-import dataHandler
+from funkcije import get_selection, get_unos, get_unos_num_positive, get_unos_single, get_unos_alpha
+import dataHandler, datetime
 
 #Funkcija koja prikazuje listu korisnika sortiranu po key-u, i ocekuje odabir
 def odabir_korisnika(sortKey, listaKorisnika):
@@ -76,10 +76,14 @@ def uredjenje_knjige():
             novoIme = get_unos("Novo ime knjige: ")
             knjiga.update({"ime":novoIme})
         elif unos == 2:
-            noviAutor = get_unos("Novi autor: ")
+            noviAutor = get_unos_alpha("Novi autor: ")
             knjiga.update({"autor":noviAutor})
         elif unos == 3:
             novaGodina = get_unos_num_positive("Nova godina: ")
+            if novaGodina > datetime.date.today().year:
+                print("\nGreska: Godina ne moze biti veca od trenutne.")
+            else:
+                break
             knjiga.update({"godinaIzdanja":novaGodina})
         elif unos == 4:
             brPrimeraka, brSlobodnihPrimeraka = knjiga["brojPrimeraka"], knjiga["brojSlobodnihPrimeraka"]
@@ -136,9 +140,14 @@ def kreiranje_knjige():
     try:
         brojSlobodnih = -1
 
-        autor = get_unos("         Autor: ")
+        autor = get_unos_alpha("         Autor: ")
         imeKnjige = get_unos("    Ime knjige: ")
-        godina = get_unos_num_positive("Godina izdanja: ")
+        while 1:
+            godina = get_unos_num_positive("Godina izdanja: ")
+            if godina > datetime.date.today().year:
+                print("\nGreska: Godina ne moze biti veca od trenutne.")
+            else:
+                break
         brojPrimeraka = get_unos_num_positive("Broj primeraka: ")
         while 1:
             brojSlobodnih = get_unos_num_positive("Broj slobodnih primeraka: ")

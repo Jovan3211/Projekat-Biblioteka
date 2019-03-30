@@ -26,6 +26,21 @@ def get_unos_single(text):
         else:
             print("\nGreska: Unos mora imati jednu rec, bez brojeva i znakova.")
 
+#Funkcija za unos recenice bez brojeva
+def get_unos_alpha(text):
+    while 1:
+        alpha = True
+        unos = input(text)
+        reci = unos.split()
+        for rec in reci:
+            if not rec.isalpha():
+                alpha = False
+                break
+        if alpha:
+            return unos
+        else:
+            print("\nGreska: Unos mora sadrzati samo slova.")
+
 #Funkcija za unos teksta sa vise stringova
 def get_unos(text):
     while 1:

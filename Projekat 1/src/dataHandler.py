@@ -1,3 +1,5 @@
+import json
+import os, sys
 from datetime import datetime
 from funkcije import STR_BIBLIOTEKAR, STR_KORISNIK
 
@@ -192,6 +194,7 @@ def kreiraj_knjigu(autor = str, ime = str, godinaIzdanja = int, brojPrimeraka = 
     noviID = get_last_id(Knjige) + 1
     knjiga.update({"id":noviID, "autor":autor, "ime":ime, "godinaIzdanja":godinaIzdanja, "brojPrimeraka":brojPrimeraka, "brojSlobodnihPrimeraka":brojSlobodnih})
     Knjige.append(knjiga)
+
     return
 
 #Funkcija koja kreira nalog po parametrima
@@ -217,4 +220,5 @@ def kreiraj_nalog(tipNaloga, ime, prezime, korisnickoIme, sifra):
         Korisnici.append(nalog)
     else:
         raise Exception("Neocekivano: Tip nije bibliotekar ili korisnik kod kreiranja novog naloga.")
+
     return
